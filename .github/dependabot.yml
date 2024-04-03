@@ -3,14 +3,15 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm" 
+    directory: "/"
     schedule:
       interval: "monthly"
+    # Ignore all major version updates
     ignore:
-      - dependency-type: "direct"
-        # Ignore major version updates
+      - dependency-name: "*"
         update-types: ["version-update:semver-major"]
+    target-branch: "develop"
     commit-message:
       prefix: "chore(npm)"
       include: "scope"
@@ -19,6 +20,11 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    # Ignore all major version updates
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    target-branch: "develop"
     commit-message:
       prefix: "chore(actions)"
       include: "scope"
