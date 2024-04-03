@@ -19,6 +19,6 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
-   commit-message:
+    commit-message:
       prefix: "chore(actions)"
       include: "scope"
