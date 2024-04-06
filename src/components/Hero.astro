@@ -1,0 +1,41 @@
+---
+import Techorbit from "./Techorbit.astro";
+---
+
+<section class="bg-dark">
+    <div class="container mx-auto flex py-24 px-4">
+        <span class="sm:w-1/2">
+            <p class="text-xs text-accent">
+                Welcome to my corner of the digital world! I'm
+            </p>
+            <h1 class="text-4xl font-bold my-2">Joan Palau</h1>
+            <h2
+                class="text-2xl text-accent text-wrap mb-3 relative w-[max-content] font-mono
+                before:absolute before:inset-0 before:animate-typewriter
+                before:bg-dark
+                after:absolute after:inset-0 after:w-[0.125em] after:animate-caret
+                after:bg-accent"
+            >
+                A Full-stack Developer
+            </h2>
+
+            <div class="text-justify">
+                <p>
+                    I am a seasoned professional with a passion for all things
+                    tech. With a strong foundation in academia and a wealth of
+                    experience in the field, I'm here to drive innovation and
+                    push boundaries.
+                </p>
+                <p>
+                    Whether you're looking to collaborate on exciting projects
+                    or simply want to stay up-to-date on the latest trends, I'm
+                    your go-to guy. Let's connect and explore the endless
+                    possibilities of the digital world together!
+                </p>
+            </div>
+        </span>
+        <span class="hidden sm:flex w-1/2 justify-center">
+            <Techorbit radius="9rem" />
+        </span>
+    </div>
+</section>

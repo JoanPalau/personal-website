@@ -1,0 +1,115 @@
+---
+interface Props {
+    radius: string;
+}
+
+const { radius } = Astro.props;
+
+// Based on equally spacing 6 images on a circle
+const spacing = "60deg";
+---
+
+<ul class="orbit">
+    <li>
+        <img src="/images/tech-logos/angular-icon.png" alt="Angular icon" />
+    </li>
+    <li>
+        <img
+            src="/images/tech-logos/google-cloud-icon.png"
+            alt="Google Cloud icon"
+        />
+    </li>
+    <li>
+        <img src="/images/tech-logos/python-icon.png" alt="Python icon" />
+    </li>
+    <li>
+        <img src="/images/tech-logos/quarkus-icon.png" alt="Quarkus icon" />
+    </li>
+    <li>
+        <img src="/images/tech-logos/react-icon.png" alt="React icon" />
+    </li>
+    <li>
+        <img
+            src="/images/tech-logos/spring-framework-icon.png"
+            alt="Spring Framework icon"
+        />
+    </li>
+</ul>
+
+<style define:vars={{ radius, spacing }}>
+    ul {
+        width: calc(var(--radius) * 2);
+        height: calc(var(--radius) * 2);
+
+        position: relative;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+
+        animation: orbit 60s linear infinite;
+    }
+
+    li {
+        position: absolute;
+        transform-origin: center;
+
+        & > * {
+            animation: orbit 60s linear reverse infinite;
+        }
+    }
+
+    li:nth-child(1) {
+        transform: translate(
+            calc(var(--radius) * cos(0 * var(--spacing))),
+            calc(var(--radius) * sin(0 * var(--spacing)))
+        );
+    }
+
+    li:nth-child(2) {
+        transform: translate(
+            calc(var(--radius) * cos(1 * var(--spacing))),
+            calc(var(--radius) * sin(1 * var(--spacing)))
+        );
+    }
+
+    li:nth-child(3) {
+        transform: translate(
+            calc(var(--radius) * cos(2 * var(--spacing))),
+            calc(var(--radius) * sin(2 * var(--spacing)))
+        );
+    }
+
+    li:nth-child(4) {
+        transform: translate(
+            calc(var(--radius) * cos(3 * var(--spacing))),
+            calc(var(--radius) * sin(3 * var(--spacing)))
+        );
+    }
+
+    li:nth-child(5) {
+        transform: translate(
+            calc(var(--radius) * cos(4 * var(--spacing))),
+            calc(var(--radius) * sin(4 * var(--spacing)))
+        );
+    }
+
+    li:nth-child(6) {
+        transform: translate(
+            calc(var(--radius) * cos(5 * var(--spacing))),
+            calc(var(--radius) * sin(5 * var(--spacing)))
+        );
+    }
+
+    img {
+        max-width: 2rem;
+        max-height: 2rem;
+        width: auto;
+        height: auto;
+    }
+
+    @keyframes orbit {
+        100% {
+            rotate: 1turn;
+        }
+    }
+</style>
